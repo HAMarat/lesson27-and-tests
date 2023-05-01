@@ -58,7 +58,23 @@ class FeedbackEntityView(View):
 # TODO ниже следует реализовать CBV для модели Destination
 @method_decorator(csrf_exempt, name='dispatch')
 class DestinationView(View):
-    pass
+    def get(self, request):
+        destinations = Destination.objects.all()
+
+        response = []
+
+        for destination in destinations:
+            response.append({
+                "id": destination.id,
+                "name": destination.name,
+            })
+
+        return JsonResponse(response, safe=False)
+
+    def post(self, request):
+        destination_data = json.loads(request.body)
+
+
 
 
 class DestinationEntityView(View):

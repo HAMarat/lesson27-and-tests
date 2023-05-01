@@ -1,7 +1,7 @@
 # Задание 1. tech support.py
 
 from django.http import JsonResponse
-from tech_support.models import Statistic
+from .models import Statistic
 
 
 # TODO напишите view-функцию которая возвращает всю статистику обращений в тех-поддержку

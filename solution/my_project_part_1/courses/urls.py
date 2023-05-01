@@ -1,5 +1,5 @@
 # TODO необходимо дописать роуты
-from courses import views
+from . import views
 from django.urls import path
 
 # TODO напишите URL который по запросу на адрес /courses/ вернёт все курсы
